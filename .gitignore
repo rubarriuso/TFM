@@ -1,0 +1,14 @@
+﻿# Ignore all files in resources (recursively)
+resources/**
+
+# Re-include directories under resources
+!resources/**/
+
+# Re-include .git* files under resources
+!resources/**/.git*
+
+# Ignore virtual environment directory
+.TFMenv/
+
+# Ignore Python cache files
+__pycache__/
