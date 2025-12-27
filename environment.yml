@@ -1,0 +1,17 @@
+name: TFMenv
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - xesmf>=0.7
+  - xarray
+  - geopandas
+  - copernicusmarine
+  - numpy
+  - pandas
+  - matplotlib
+  - folium
+  - scipy
+
+
+# conda env create -f environment.yml
