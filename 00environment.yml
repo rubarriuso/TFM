@@ -14,4 +14,4 @@ dependencies:
   - scipy
 
 
-# conda env create -f environment.yml
+# conda env create -f 00environment.yml

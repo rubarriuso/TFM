@@ -1,9 +1,7 @@
 ﻿# Ignore all files in resources (recursively)
 resources/**
-
 # Re-include directories under resources
 !resources/**/
-
 # Re-include .git* files under resources
 !resources/**/.git*
 
@@ -12,3 +10,10 @@ resources/**
 
 # Ignore Python cache files
 __pycache__/
+
+# Ignore all files in resources (recursively)
+data/**
+# Re-include directories under resources
+!data/**/
+# Re-include .git* files under resources
+!data/**/.git*
