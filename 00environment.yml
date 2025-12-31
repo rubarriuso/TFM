@@ -2,9 +2,11 @@ name: TFMenv
 channels:
   - conda-forge
 dependencies:
-  - python
+  - python=3.10
+  - esmpy=8.4.2
   - xesmf>=0.7
   - xarray
+  - zarr
   - geopandas
   - copernicusmarine
   - numpy
@@ -12,6 +14,11 @@ dependencies:
   - matplotlib
   - folium
   - scipy
+  - cartopy
+  - jupyterlab
+  - ipykernel
+  - dask
+  
 
 
 # conda env create -f 00environment.yml
