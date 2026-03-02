@@ -5,15 +5,23 @@ resources/**
 # Re-include .git* files under resources
 !resources/**/.git*
 
+# Ignore all files in data (recursively)
+data/**
+# Re-include directories under data
+!data/**/
+# Re-include .git* files under data
+!data/**/.git*
+
+# Ignore all files in maps (recursively)
+#maps/**
+# Re-include directories under maps
+#!maps/**/
+# Re-include .git* files under maps
+#!maps/**/.git*
+
 # Ignore virtual environment directory
 .TFMenv/
 
 # Ignore Python cache files
 __pycache__/
 
-# Ignore all files in resources (recursively)
-data/**
-# Re-include directories under resources
-!data/**/
-# Re-include .git* files under resources
-!data/**/.git*
