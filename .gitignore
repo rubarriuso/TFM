@@ -13,11 +13,11 @@ data/**
 !data/**/.git*
 
 # Ignore all files in maps (recursively)
-#maps/**
+maps/**
 # Re-include directories under maps
-#!maps/**/
+!maps/**/
 # Re-include .git* files under maps
-#!maps/**/.git*
+!maps/**/.git*
 
 # Ignore virtual environment directory
 .TFMenv/
