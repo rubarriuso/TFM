@@ -1,5 +1,5 @@
 strict digraph model {
-	graph [ordering=in rankdir=TB size="50.4,50.4"]
+	graph [dpi=200 ordering=in rankdir=TB size="50.4,50.4"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
@@ -596,7 +596,7 @@ strict digraph model {
 		}
 	}
 	subgraph cluster_16 {
-		fontsize=12 label=TemporalAttentionBlock3D labeljust=l style=dashed
+		fontsize=12 label=TemporalAggregationBlock labeljust=l style=dashed
 		subgraph cluster_17 {
 			fontsize=12 label=Sequential labeljust=l style=dashed
 			43 [label=<
