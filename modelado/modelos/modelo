@@ -5,7 +5,7 @@ strict digraph model {
 	0 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 12, 12, 62, 24)</TD></TR>
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 12, 11, 62, 25)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
@@ -13,11 +13,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">permute<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 12, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 12, 11, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 12, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 11, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	subgraph cluster_2 {
@@ -30,11 +30,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">Conv3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 12, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 11, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			3 [label=<
@@ -43,11 +43,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">BatchNorm3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			4 [label=<
@@ -56,11 +56,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">GELU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			5 [label=<
@@ -69,11 +69,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">Dropout3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			6 [label=<
@@ -82,11 +82,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">Conv3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			7 [label=<
@@ -95,11 +95,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">BatchNorm3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			8 [label=<
@@ -108,11 +108,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">GELU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		}
@@ -123,7 +123,7 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">MaxPool3d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
@@ -562,7 +562,7 @@ strict digraph model {
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		41 [label=<
@@ -571,11 +571,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">cat<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">2 x (1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">2 x (1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		subgraph cluster_15 {
@@ -586,11 +586,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">Sequential<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		}
@@ -605,11 +605,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">Conv3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			44 [label=<
@@ -618,11 +618,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">Sigmoid<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		}
@@ -632,11 +632,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">2 x (1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">2 x (1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		46 [label=<
@@ -645,11 +645,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">Conv3d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 1, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 1, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		47 [label=<
@@ -658,11 +658,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">softmax<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 1, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 1, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 1, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 1, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		48 [label=<
@@ -671,11 +671,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24), (1, 1, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25), (1, 1, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		49 [label=<
@@ -684,11 +684,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">sum<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	}
@@ -700,11 +700,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		51 [label=<
@@ -713,11 +713,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		52 [label=<
@@ -726,11 +726,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">GELU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		53 [label=<
@@ -739,11 +739,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 8, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 1, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 1, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	}
@@ -753,7 +753,7 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">interpolate<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 1, 62, 24) </TD>
+                        <TD COLSPAN="2">(1, 1, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
