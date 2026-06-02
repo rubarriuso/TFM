@@ -5,7 +5,7 @@ strict digraph model {
 	0 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 12, 11, 62, 25)</TD></TR>
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 12, 10, 62, 25)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
@@ -13,11 +13,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">permute<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 12, 11, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 12, 10, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 11, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 10, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	subgraph cluster_2 {
@@ -30,7 +30,7 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">Conv3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 11, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 10, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
@@ -54,7 +54,7 @@ strict digraph model {
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">GELU<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
@@ -106,7 +106,7 @@ strict digraph model {
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">GELU<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
@@ -164,7 +164,7 @@ strict digraph model {
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">GELU<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
                     </TR>
@@ -216,7 +216,7 @@ strict digraph model {
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">GELU<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
                     </TR>
@@ -274,7 +274,7 @@ strict digraph model {
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">GELU<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
@@ -326,7 +326,7 @@ strict digraph model {
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">GELU<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
@@ -371,7 +371,7 @@ strict digraph model {
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">GELU<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
@@ -429,7 +429,7 @@ strict digraph model {
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">GELU<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 8, 12, 1, 1) </TD>
                     </TR>
@@ -724,7 +724,7 @@ strict digraph model {
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">GELU<BR/>depth:2</TD>
+                        <TD ROWSPAN="2">PReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 8, 62, 25) </TD>
                     </TR>
