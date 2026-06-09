@@ -1,5 +1,5 @@
 strict digraph model {
-	graph [dpi=200 ordering=in rankdir=TB size="36.0,36.0"]
+	graph [dpi=200 ordering=in rankdir=TB size="40.199999999999996,40.199999999999996"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
@@ -34,7 +34,7 @@ strict digraph model {
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			3 [label=<
@@ -43,11 +43,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">BatchNorm3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			4 [label=<
@@ -56,11 +56,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			5 [label=<
@@ -69,11 +69,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">Dropout3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			6 [label=<
@@ -82,11 +82,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">Conv3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			7 [label=<
@@ -95,11 +95,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">BatchNorm3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			8 [label=<
@@ -108,298 +108,343 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		}
 	}
+	9 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MaxPool3d<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 31, 12) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 	subgraph cluster_4 {
 		fontsize=12 label=ConvBlock labeljust=l style=dashed
 		subgraph cluster_5 {
 			fontsize=12 label=Sequential labeljust=l style=dashed
-			9 [label=<
+			10 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 31, 12) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 32, 12, 62, 25) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-			10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">BatchNorm3d<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 32, 12, 62, 25) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 32, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			11 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">BatchNorm3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 32, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 32, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			12 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">Dropout3d<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 32, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 32, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			13 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">Conv3d<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">Dropout3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 32, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 32, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			14 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">BatchNorm3d<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">Conv3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 32, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 32, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			15 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">BatchNorm3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 32, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 32, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			16 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		}
 	}
+	17 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MaxPool3d<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 15, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 	subgraph cluster_6 {
 		fontsize=12 label=ConvBlock labeljust=l style=dashed
 		subgraph cluster_7 {
 			fontsize=12 label=Sequential labeljust=l style=dashed
-			16 [label=<
+			18 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 32, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 15, 6) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-			17 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">BatchNorm3d<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-			18 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			19 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">Dropout3d<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">BatchNorm3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			20 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">Conv3d<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			21 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">BatchNorm3d<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">Dropout3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			22 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">Conv3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
-		}
-	}
-	subgraph cluster_8 {
-		fontsize=12 label=ConvBlock labeljust=l style=dashed
-		subgraph cluster_9 {
-			fontsize=12 label=Sequential labeljust=l style=dashed
 			23 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">Conv3d<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">BatchNorm3d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			24 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">BatchNorm3d<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-			25 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
                         <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
-			26 [label=<
+		}
+	}
+	subgraph cluster_8 {
+		fontsize=12 label=DecoderBlock3D labeljust=l style=dashed
+		25 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">Dropout3d<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">ConvTranspose3d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 15, 6) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 30, 12) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
-			27 [label=<
+		26 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">Conv3d<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">interpolate<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 30, 12) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
                     </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
+                    </TABLE>> fillcolor=aliceblue]
+		27 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">cat<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 16, 12, 31, 12) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 31, 12) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		subgraph cluster_9 {
+			fontsize=12 label=ConvBlock labeljust=l style=dashed
 			28 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">BatchNorm3d<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">Sequential<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 32, 12, 31, 12) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		}
+	}
+	subgraph cluster_10 {
+		fontsize=12 label=DecoderBlock3D labeljust=l style=dashed
+		29 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose3d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 12, 31, 12) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		30 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">interpolate<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 8, 12, 62, 24) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
                         <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-			29 [label=<
+                    </TABLE>> fillcolor=aliceblue]
+		31 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">PReLU<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">cat<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">2 x (1, 8, 12, 62, 25) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		subgraph cluster_11 {
+			fontsize=12 label=ConvBlock labeljust=l style=dashed
+			32 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Sequential<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
@@ -408,11 +453,11 @@ strict digraph model {
                     </TABLE>> fillcolor=darkseagreen1]
 		}
 	}
-	subgraph cluster_10 {
+	subgraph cluster_12 {
 		fontsize=12 label=TemporalAggregationBlock labeljust=l style=dashed
-		subgraph cluster_11 {
+		subgraph cluster_13 {
 			fontsize=12 label=Sequential labeljust=l style=dashed
-			30 [label=<
+			33 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -425,7 +470,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
-			31 [label=<
+			34 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -439,7 +484,7 @@ strict digraph model {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		}
-		32 [label=<
+		35 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -452,7 +497,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-		33 [label=<
+		36 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -465,7 +510,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 1, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
-		34 [label=<
+		37 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -478,7 +523,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 1, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-		35 [label=<
+		38 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -491,7 +536,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 8, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-		36 [label=<
+		39 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -505,9 +550,9 @@ strict digraph model {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	}
-	subgraph cluster_12 {
+	subgraph cluster_14 {
 		fontsize=12 label=Sequential labeljust=l style=dashed
-		37 [label=<
+		40 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -520,7 +565,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 8, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
-		38 [label=<
+		41 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -533,7 +578,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 8, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
-		39 [label=<
+		42 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -546,7 +591,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 8, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
-		40 [label=<
+		43 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -560,7 +605,7 @@ strict digraph model {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	}
-	41 [label=<
+	44 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -573,7 +618,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 1, 30, 17) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	42 [label=<
+	45 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                         <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 30, 17)</TD></TR>
@@ -603,23 +648,28 @@ strict digraph model {
 	22 -> 23
 	23 -> 24
 	24 -> 25
+	16 -> 27
 	25 -> 26
 	26 -> 27
 	27 -> 28
 	28 -> 29
-	29 -> 32
+	8 -> 31
 	29 -> 30
 	30 -> 31
 	31 -> 32
-	32 -> 33
 	32 -> 35
+	32 -> 33
 	33 -> 34
 	34 -> 35
 	35 -> 36
+	35 -> 38
 	36 -> 37
 	37 -> 38
 	38 -> 39
 	39 -> 40
 	40 -> 41
 	41 -> 42
+	42 -> 43
+	43 -> 44
+	44 -> 45
 }
