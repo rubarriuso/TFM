@@ -5,7 +5,7 @@ strict digraph model {
 	0 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 62, 25)</TD></TR>
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 12, 9, 62, 25)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
@@ -13,11 +13,11 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">permute<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 12, 6, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 12, 9, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 9, 12, 62, 25) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	2 [label=<
@@ -26,7 +26,7 @@ strict digraph model {
                     <TR>
                         <TD ROWSPAN="2">ConvBlock<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 12, 62, 25) </TD>
+                        <TD COLSPAN="2">(1, 9, 12, 62, 25) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
