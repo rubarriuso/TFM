@@ -39,21 +39,21 @@ class DecoderBlock3D(nn.Module):
 
 # -------- Temporal Aggregation Block --------
 class TemporalAggregationBlock(nn.Module):
-    def __init__(self, in_channels):
+    def __init__(self, in_channels, prediction_horizon):
         super().__init__()
+        self.prediction_horizon = prediction_horizon
         self.temporal_attn = nn.Sequential(
             nn.Conv3d(in_channels, in_channels, kernel_size=(3, 1, 1), padding=(1, 0, 0), groups=in_channels),
             nn.Sigmoid())
-        self.temporal_score = nn.Conv3d(in_channels, 1, kernel_size=1)
-    
+        self.temporal_score = nn.Conv3d(in_channels, prediction_horizon, kernel_size=1)
+
     def forward(self, x):
-        # x shape: (B, C, T, H, W)
-        attn = self.temporal_attn(x)
-        feat = x * attn
-        score = self.temporal_score(feat)
-        weights = torch.softmax(score, dim=2) 
-        feat = (feat * weights).sum(dim=2)    
-        return feat
+        # x: (B, C, T, H, W)
+        feat = x * self.temporal_attn(x)
+        score = self.temporal_score(feat)                 # (B, horizon, T, H, W)
+        weights = torch.softmax(score, dim=2)             # attention across the 24 input months
+        feat = (feat.unsqueeze(2) * weights.unsqueeze(1)).sum(dim=3)
+        return feat                                       # (B, C, horizon, H, W)
 
 # -------- Global Attention Branch --------
 class GlobalAttentionBlock(nn.Module):
@@ -168,13 +168,14 @@ class ClassificationHead(nn.Module):
 #======================================================================================
 # -------- U-Net 3D classification temporal collapse after bottleneck --------
 class UNet3DCla(nn.Module):
-    def __init__(self, in_channels, out_hw, num_classes, base_ch=8):
+    def __init__(self, in_channels, out_hw, num_classes, base_ch=8, prediction_horizon=3):
         super().__init__()
         dp_lvl1 = 0.20
         dp_lvl2 = 0.3
         dp_lvl3 = 0.3
         self.out_hw = out_hw  # (H, W)
         self.num_classes = num_classes
+        self.prediction_horizon = prediction_horizon
 
         # -------- Encoder --------
         self.enc1 = ConvBlock(in_channels, base_ch, dp=dp_lvl1)
@@ -194,7 +195,7 @@ class UNet3DCla(nn.Module):
         self.decoder1 = DecoderBlock3D(base_ch * 2, base_ch, base_ch, dp=dp_lvl1)
     
         # -------- Temporal Aggregation --------
-        self.temporal_agg = TemporalAggregationBlock(base_ch)
+        self.temporal_agg = TemporalAggregationBlock(base_ch, prediction_horizon=self.prediction_horizon)
 
         # -------- Classifier Head --------
         self.output_head = ClassificationHead(base_ch=base_ch, out_channels=self.num_classes, out_hw=self.out_hw)
@@ -221,24 +222,28 @@ class UNet3DCla(nn.Module):
         d1 = self.decoder1(d2, s1)
 
         # -------- Temporal Aggregation --------
-        final_2d = self.temporal_agg(d1)
+        final = self.temporal_agg(d1)
+        B, C, horizon, H, W = final.shape
+        final = final.permute(0, 2, 1, 3, 4).reshape(B * horizon, C, H, W)
         
         # -------- Classifier Head --------
-        logits = self.output_head(final_2d)
+        logits = self.output_head(final)
+        logits = logits.reshape(B, horizon, self.num_classes, self.out_hw[0], self.out_hw[1])
+        logits = logits.permute(0, 2, 1, 3, 4)
 
         if mask is not None:
-            # Match out shape: (B, 1, H, W)
             logits = logits * mask.unsqueeze(1).float()
         return logits
 
 # -------- U-Net 3D temporal collapse after bottleneck --------
 class UNet3DReg(nn.Module):
-    def __init__(self, in_channels, out_hw, out_channels=1, base_ch=10):
+    def __init__(self, in_channels, out_hw, out_channels=1, base_ch=8, prediction_horizon=3):
         super().__init__()
         dp_lvl1 = 0.25
         dp_lvl2 = 0.3
         dp_lvl3 = 0.3
         self.out_hw = out_hw  # (H, W)
+        self.prediction_horizon = prediction_horizon
 
         # -------- Encoder --------
         self.enc1 = ConvBlock(in_channels, base_ch, dp=dp_lvl1)
@@ -259,7 +264,7 @@ class UNet3DReg(nn.Module):
         self.decoder1 = DecoderBlock3D(base_ch * 2, base_ch, base_ch, dp=dp_lvl1)
     
         # -------- Temporal Aggregation --------
-        self.temporal_agg = TemporalAggregationBlock(base_ch)
+        self.temporal_agg = TemporalAggregationBlock(base_ch, prediction_horizon=self.prediction_horizon)
 
         # -------- Regression Head --------
         self.regression_head = RegressionHead(base_ch=base_ch, out_channels=out_channels, out_hw=self.out_hw)
@@ -287,15 +292,14 @@ class UNet3DReg(nn.Module):
         d1 = self.decoder1(d2, s1)
 
         # -------- Temporal Aggregation --------
-        final_2d = self.temporal_agg(d1)
-        
-        # -------- Regression Head --------
-        out = self.regression_head(final_2d)
-        
-  
+        final = self.temporal_agg(d1)
 
+        B, C, horizon, H, W = final.shape
+        final = final.permute(0, 2, 1, 3, 4).reshape(B * horizon, C, H, W)
+
+        out = self.regression_head(final).squeeze(1)
+        out = out.reshape(B, horizon, self.out_hw[0], self.out_hw[1])
 
         if mask is not None:
-            # Match out shape: (B, 1, H, W)
-            out = out * mask.unsqueeze(1).float()
+            out = out * mask.float()
         return out
